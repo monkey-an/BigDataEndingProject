@@ -1,0 +1,13 @@
+select t_order.buy_time,t_user.age,sum(cast(price as double)) as totalPrice 
+from t_order join t_user 
+on t_order.uid = t_user.uid  
+where t_order.price!='' and t_order.uid!='uid'  
+group by t_order.buy_time,t_user.age;
+
+
+use exam;
+select substring(t_loan.loan_time,0,10),t_user.sex,sum(cast(loan_amount as double)) as totalLoanAmount 
+from t_loan join t_user 
+on t_loan.uid = t_user.uid  
+where t_loan.loan_amount!='' and t_loan.uid!='uid'  
+group by substring(t_loan.loan_time,0,10),t_user.sex;

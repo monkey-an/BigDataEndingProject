@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `t_user`(
+   `uid` varchar(50) not null,
+   `age` VARCHAR(100) NOT NULL,
+   `sex` VARCHAR(100) NOT NULL,
+   `active_date` VARCHAR(100) NOT NULL,
+   `limit` VARCHAR(100) NOT NULL,   
+   PRIMARY KEY ( `uid` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+load data infile '/t_user.csv'  into table t_user  fields terminated by ',' optionally enclosed by '"' escaped by '"'  lines terminated by '\r\n';
