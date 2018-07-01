@@ -12,6 +12,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * 实现思路：
+ * 1、以hive方式，逐行读取t_click数据
+ * 2、在redis中记录offset
+ * 3、读出数据后，构造kafka消息，并发送至kafka
+ */
+
 public class TOrderProducer {
     private static final String HIVE_TORDER_OFFSET_KEY = "t_order_offset";
     private static final int pageSize = 1;

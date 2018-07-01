@@ -16,6 +16,13 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
+/**
+ * 实现思路：
+ * 1、构建JavaStreamingContext，使用KafkaUtils构建JavaPairInputDStream
+ * 2、构建以kafka消息体反序列化为TClick实体构成的JavaDStream对象
+ * 3、遍历此JavaDStream，根据消息中的pid对相应的redis缓存做累加操作
+ */
+
 public class TClickCount {
     public static void main(String[] args) throws InterruptedException {
         SparkConf conf = new SparkConf().setAppName("TClickCount").setMaster("local[*]");
