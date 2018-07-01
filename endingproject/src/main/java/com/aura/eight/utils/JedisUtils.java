@@ -1,4 +1,4 @@
-package com.aura.sixsixsix.utils;
+package com.aura.eight.utils;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

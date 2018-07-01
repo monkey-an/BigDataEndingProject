@@ -1,4 +1,4 @@
-package com.aura.sixsixsix.model;
+package com.aura.eight.model;
 
 import java.io.Serializable;
 

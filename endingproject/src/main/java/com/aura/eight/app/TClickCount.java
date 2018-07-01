@@ -1,8 +1,8 @@
-package com.aura.sixsixsix.app;
+package com.aura.eight.app;
 
 import com.alibaba.fastjson.JSONObject;
-import com.aura.sixsixsix.model.TClick;
-import com.aura.sixsixsix.utils.JedisUtils;
+import com.aura.eight.model.TClick;
+import com.aura.eight.utils.JedisUtils;
 import kafka.serializer.StringDecoder;
 import org.apache.spark.SparkConf;
 import org.apache.spark.streaming.Durations;
@@ -32,7 +32,7 @@ public class TClickCount {
         // Kafka configurations
         String[] topics = {"t_click"};
 
-        String brokers = com.aura.sixsixsix.utils.KafkaUtils.KAFKA_ADDR;
+        String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");

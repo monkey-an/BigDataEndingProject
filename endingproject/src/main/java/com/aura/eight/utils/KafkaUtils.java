@@ -1,4 +1,4 @@
-package com.aura.sixsixsix.utils;
+package com.aura.eight.utils;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
@@ -9,9 +9,11 @@ import java.util.Map;
 public class KafkaUtils {
     private static String KAFKA_SERVER = "anlu.local";
     public static String KAFKA_ADDR = KAFKA_SERVER + ":9092";
+    private static KafkaProducer<String,String> producer= null;
+
     private static String KAFKA_USER_TOPIC = "t_click";
     private static String KAFKA_ORDER_TOPIC = "t_order";
-    private static KafkaProducer<String,String> producer= null;
+    private static String KAFKA_LOAN_TOPIC = "t_loan";
 
     static{
         Map<String,String> props = new HashMap<>();
@@ -29,5 +31,10 @@ public class KafkaUtils {
     public static void sendTOrderMsg(String value)
     {
         producer.send(new ProducerRecord<>(KAFKA_ORDER_TOPIC, value));
+    }
+
+    public static void sendTLoanMsg(String value)
+    {
+        producer.send(new ProducerRecord<>(KAFKA_LOAN_TOPIC, value));
     }
 }

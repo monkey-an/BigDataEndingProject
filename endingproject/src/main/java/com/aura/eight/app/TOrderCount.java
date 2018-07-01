@@ -1,10 +1,9 @@
-package com.aura.sixsixsix.app;
+package com.aura.eight.app;
 
 import com.alibaba.fastjson.JSONObject;
-import com.aura.sixsixsix.model.TClick;
-import com.aura.sixsixsix.model.TOrder;
-import com.aura.sixsixsix.utils.HiveConnectionManager;
-import com.aura.sixsixsix.utils.JedisUtils;
+import com.aura.eight.model.TOrder;
+import com.aura.eight.utils.HiveConnectionManager;
+import com.aura.eight.utils.JedisUtils;
 import kafka.serializer.StringDecoder;
 import org.apache.spark.SparkConf;
 import org.apache.spark.streaming.Durations;
@@ -24,7 +23,7 @@ import java.util.Map;
 /**
  * 实现思路：
  * 1、构建JavaStreamingContext，使用KafkaUtils构建JavaPairInputDStream
- * 2、构建以kafka消息体反序列化为TClick实体构成的JavaDStream对象
+ * 2、构建以kafka消息体反序列化为TOrder实体构成的JavaDStream对象
  * 3、遍历此JavaDStream，根据消息中的pid对相应的redis缓存做累加操作
  */
 
@@ -39,9 +38,10 @@ public class TOrderCount {
 
         String[] topics = {"t_order"};
 
-        String brokers = com.aura.sixsixsix.utils.KafkaUtils.KAFKA_ADDR;
+        String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
+        kafkaParams.put("group.id", "TOrderGroup");
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");
 
         final String clickHashKey = "buyage::sum";

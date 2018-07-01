@@ -1,11 +1,11 @@
-package com.aura.sixsixsix.app;
+package com.aura.eight.app;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.aura.sixsixsix.model.TOrder;
-import com.aura.sixsixsix.utils.HiveConnectionManager;
-import com.aura.sixsixsix.utils.JedisUtils;
-import com.aura.sixsixsix.utils.KafkaUtils;
+import com.aura.eight.model.TOrder;
+import com.aura.eight.utils.HiveConnectionManager;
+import com.aura.eight.utils.JedisUtils;
+import com.aura.eight.utils.KafkaUtils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

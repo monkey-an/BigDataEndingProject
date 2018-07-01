@@ -1,4 +1,4 @@
-package com.aura.sixsixsix.utils;
+package com.aura.eight.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

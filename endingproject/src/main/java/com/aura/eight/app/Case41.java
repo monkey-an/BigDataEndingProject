@@ -1,4 +1,4 @@
-package com.aura.sixsixsix.app;
+package com.aura.eight.app;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.ForeachFunction;
