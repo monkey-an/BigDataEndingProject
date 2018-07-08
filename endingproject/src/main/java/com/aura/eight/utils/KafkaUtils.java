@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class KafkaUtils {
-    private static String KAFKA_SERVER = "anlu.local";
+    private static String KAFKA_SERVER = "bigdata";
     public static String KAFKA_ADDR = KAFKA_SERVER + ":9092";
     private static KafkaProducer<String,String> producer= null;
 

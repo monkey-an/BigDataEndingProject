@@ -32,7 +32,7 @@ public class TOrderCount {
 
 
     public static void main(String[] args) throws InterruptedException {
-        SparkConf conf = new SparkConf().setAppName("TOrderSum").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("TOrderSum");
 
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(2));
 
@@ -41,7 +41,7 @@ public class TOrderCount {
         String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
-        kafkaParams.put("group.id", "TOrderGroup");
+//        kafkaParams.put("group.id", "TOrderGroup");
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");
 
         final String clickHashKey = "buyage::sum";

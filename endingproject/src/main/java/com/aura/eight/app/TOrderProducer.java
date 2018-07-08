@@ -21,7 +21,7 @@ import java.sql.Statement;
 
 public class TOrderProducer {
     private static final String HIVE_TORDER_OFFSET_KEY = "t_order_offset";
-    private static final int pageSize = 1;
+    private static final int pageSize = 10;
     private static final String HQL_TEMPLATE = "select * from t_order limit %1$s,"+pageSize;
 
     public static void main(String[] args) throws InterruptedException, SQLException {

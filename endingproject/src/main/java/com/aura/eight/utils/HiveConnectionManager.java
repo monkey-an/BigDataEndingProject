@@ -9,9 +9,9 @@ public class HiveConnectionManager {
     private static Connection conn = null;
 
     private static final String driverName = "org.apache.hive.jdbc.HiveDriver";
-    private static final String jdbcUrl = "jdbc:hive2://anlu.local:10000/exam";
-    private static final String user = "anluhive";
-    private static final String password = "anluhive";
+    private static final String jdbcUrl = "jdbc:hive2://localhost:10000/jd";
+    private static final String user = "bigdata";
+    private static final String password = "bigdata";
 
     public synchronized static Connection getConn() {
         if (conn == null) {

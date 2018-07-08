@@ -32,7 +32,7 @@ public class LoanGroupBySexCount {
 
 
     public static void main(String[] args) throws InterruptedException {
-        SparkConf conf = new SparkConf().setAppName("LGSApplication").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("LGSApplication");
 
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(2));
 
@@ -41,7 +41,7 @@ public class LoanGroupBySexCount {
         String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
-        kafkaParams.put("group.id", "LGSGroup");
+//        kafkaParams.put("group.id", "LGSGroup");
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");
 
         final String clickHashKey = "loanamountsex::sum";

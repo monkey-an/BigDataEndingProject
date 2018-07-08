@@ -26,7 +26,7 @@ import java.util.Map;
 
 public class TotalPriceGroupByCategoryCount {
     public static void main(String[] args) throws InterruptedException {
-        SparkConf conf = new SparkConf().setAppName("TPGCApplication").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("TPGCApplication");
 
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(2));
 
@@ -35,7 +35,7 @@ public class TotalPriceGroupByCategoryCount {
         String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
-        kafkaParams.put("group.id", "TPGCGroup");
+//        kafkaParams.put("group.id", "TPGCGroup");
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");
 
         final String clickHashKey = "totalpricecategory::sum";

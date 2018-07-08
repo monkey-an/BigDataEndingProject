@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class TClickCount {
     public static void main(String[] args) throws InterruptedException {
-        SparkConf conf = new SparkConf().setAppName("TClickCount").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("TClickCount");
 
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(2));
 

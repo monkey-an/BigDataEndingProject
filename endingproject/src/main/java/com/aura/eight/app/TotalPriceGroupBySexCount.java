@@ -32,7 +32,7 @@ public class TotalPriceGroupBySexCount {
 
 
     public static void main(String[] args) throws InterruptedException {
-        SparkConf conf = new SparkConf().setAppName("TPGSApplication").setMaster("local[*]");
+        SparkConf conf = new SparkConf().setAppName("TPGSApplication");
 
         JavaStreamingContext jsc = new JavaStreamingContext(conf, Durations.seconds(2));
 
@@ -41,7 +41,7 @@ public class TotalPriceGroupBySexCount {
         String brokers = com.aura.eight.utils.KafkaUtils.KAFKA_ADDR;
         Map<String, String> kafkaParams = new HashMap<>();
         kafkaParams.put("metadata.broker.list", brokers);
-        kafkaParams.put("group.id", "TPGSGroup");
+//        kafkaParams.put("group.id", "TPGSGroup");
         kafkaParams.put("serializer.class", "kafka.serializer.StringEncoder");
 
         final String clickHashKey = "totalpricesex::sum";

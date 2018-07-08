@@ -22,7 +22,7 @@ import java.sql.Statement;
 public class TLoanProducer {
     private static final String HIVE_TLOAN_OFFSET_KEY = "t_loan_offset";
     private static final int pageSize = 100;
-    private static final String HQL_TEMPLATE = "select * from t_loan where uid<>'uid' limit %1$s,"+pageSize;
+    private static final String HQL_TEMPLATE = "select * from t_loan where uid is not null limit %1$s,"+pageSize;
 
     public static void main(String[] args) throws InterruptedException, SQLException {
         while(true)

@@ -8,7 +8,7 @@ public class JedisUtils {
     private static int MAX_IDLE = 200;
     private static int TIMEOUT = 10000;
     private static boolean TEST_ON_BORROW = true;
-    private static final String REDIS_SERVER = "anlu.local";
+    private static final String REDIS_SERVER = "localhost";
     private static final int REDIS_PORT = 6379;
 
     private static JedisPool pool = null;
